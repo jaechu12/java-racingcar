@@ -21,6 +21,17 @@ public class Application {
             carNames.add(name.trim());
         }
 
+        //예외처리---------------------------------------------------
+        try {
+            for (String Name : carNames) {
+                if (Name.length() > 5) {
+                    throw new IllegalArgumentException();
+                }
+            }
+        } catch (IllegalArgumentException e) {
+            return;
+        }
+
     }
 }
 
