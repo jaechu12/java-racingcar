@@ -20,5 +20,6 @@ public class Application {
         for (String name : userInput.split(",")) {
             carNames.add(name.trim());
         }
+
     }
 }
