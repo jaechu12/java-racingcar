@@ -32,6 +32,10 @@ public class Application {
             return;
         }
 
+        System.out.println("시도할 회수는 몇회인가요?");
+        String count1 = readLine();
+        int count = Integer.parseInt(count1);
+
     }
 }
 
