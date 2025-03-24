@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class Application {
+
     public static void main(String[] args) {
 
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
@@ -36,7 +37,7 @@ public class Application {
         String count1 = readLine();
         int count = Integer.parseInt(count1);
         System.out.println("실행 결과");
-        
+
         //경주준비-------------------------------------------------
         List<Integer> score = new ArrayList<>();
         String line;
@@ -45,5 +46,24 @@ public class Application {
             score.add(0);
         }
 
+        //경주시작-------------------------------------------------
+        int ssc = 0;
+        for (int i = 0; i < count * carNames.size(); i++) {
+
+            if (ssc == carNames.size()) {
+                ssc = 0;
+            }
+
+            //랜덤계산-------------------------------------------------
+            int randomInt = Randoms.pickNumberInRange(0, 9);
+            if (randomInt > 3) {
+                score.set(ssc, score.get(ssc) + 1);
+            }
+            ssc = ssc + 1;
+        }
+
     }
+
+
 }
+
