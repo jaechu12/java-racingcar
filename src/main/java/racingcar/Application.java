@@ -36,6 +36,32 @@ public class Application {
         String count1 = readLine();
         int count = Integer.parseInt(count1);
 
+        System.out.println("실행 결과");
+
+        //경주준비-------------------------------------------------
+        List<Integer> score = new ArrayList<>();
+        String line;
+
+        for (String Name1 : carNames) {
+            score.add(0);
+        }
+
+        //경주시작-------------------------------------------------
+        int ssc = 0;
+        for (int i = 0; i < count * carNames.size(); i++) {
+
+            if (ssc == carNames.size()) {
+                ssc = 0;
+            }
+
+            //랜덤계산-------------------------------------------------
+            int randomInt = Randoms.pickNumberInRange(0, 9);
+            if (randomInt > 3) {
+                score.set(ssc, score.get(ssc) + 1);
+            }
+            ssc = ssc + 1;
+        }
+
     }
 }
 
