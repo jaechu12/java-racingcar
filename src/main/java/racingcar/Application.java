@@ -61,6 +61,21 @@ public class Application {
             }
             ssc = ssc + 1;
         }
+        
+        //1등 찾기--------------------------------------------------------------
+        int rank1 = 1;
+        int rank2 = 0;
+        for (int k = 0; score.size() - 1 > k; k++) {
+            rank2 = Math.max(score.get(k), score.get(k + 1));
+            if (rank2>rank1){
+                rank1=rank2;
+            }
+        }
+
+        if (carNames.size()==1){
+            rank1=score.get(0);
+        }
+
 
     }
 }
