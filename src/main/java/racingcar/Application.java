@@ -12,6 +12,15 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Application {
 
+    @Test
+    void test() {
+        String input = "1,2,3,45";
+        String[] result = input.split(",");
+
+        assertThat(result).contains("45","3","2", "1");
+        assertThat(result).containsExactly("1","2","3", "45");
+    }
+
     public static void main(String[] args) {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
         String userInput = readLine().trim();
