@@ -61,9 +61,35 @@ public class Application {
             }
             ssc = ssc + 1;
         }
+        //1등 찾기--------------------------------------------------------------
+        int rank1 = 1;
+        int rank2 = 0;
+        for (int k = 0; score.size() - 1 > k; k++) {
+            rank2 = Math.max(score.get(k), score.get(k + 1));
+            if (rank2>rank1){
+                rank1=rank2;
+            }
+        }
 
+        if (carNames.size()==1){
+            rank1=score.get(0);
+        }
+
+        //출력-------------------------------------------------
+        for (int k = 0; score.size() > k; k++) {
+            line = "-".repeat(score.get(k));
+            System.out.println(carNames.get(k) + " : " + line);
+        }
+        System.out.println("");
+
+        // 1등 출력---------------------------------------------------
+        List<String> winner = new ArrayList<>();
+        for (int k = 0; score.size()> k; k++) {
+            if (rank1== score.get(k)){
+                winner.add(carNames.get(k));
+            }
+        }
+        System.out.print("최종 우승자 : " + String.join(" ,", winner));
     }
-
-
 }
 
