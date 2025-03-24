@@ -35,6 +35,15 @@ public class Application {
         System.out.println("시도할 회수는 몇회인가요?");
         String count1 = readLine();
         int count = Integer.parseInt(count1);
+        System.out.println("실행 결과");
+        
+        //경주준비-------------------------------------------------
+        List<Integer> score = new ArrayList<>();
+        String line;
+
+        for (String Name1 : carNames) {
+            score.add(0);
+        }
 
     }
 }
