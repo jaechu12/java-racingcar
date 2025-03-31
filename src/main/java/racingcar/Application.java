@@ -17,5 +17,17 @@ public class Application {
     protected static int count = 0;
     protected static int rank1 = 1;
 
+    public static void main(String[] args) {
+        Car car = new Car();
+        GameSystem gameSystem = new GameSystem();
+        Ranking ranking = new Ranking();
+
+        gameSystem.input();
+        gameSystem.ready();
+        car.race();
+        ranking.rank();
+        ranking.PrintRank();
+    }
+    
 }
 
