@@ -17,5 +17,21 @@ public class Ranking extends Application{
         }
     }
 
-    
+    public void PrintRank(){
+        String line;
+        for (int k = 0; super.score.size() > k; k++) {
+            line = "-".repeat(super.score.get(k));
+            System.out.println(super.carNames.get(k) + " : " + line);
+        }
+        System.out.println("");
+
+        List<String> winner = new ArrayList<>();
+        for (int k = 0; super.score.size()> k; k++) {
+            if (super.rank1== super.score.get(k)){
+                winner.add(super.carNames.get(k));
+            }
+        }
+        System.out.print("최종 우승자 : " + String.join(" ,", winner));
+
+    }
 }
