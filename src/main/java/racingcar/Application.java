@@ -14,7 +14,7 @@ public class Application {
 
     protected static List<Integer> score = new ArrayList<>();
     protected static List<String> carNames = new ArrayList<>();
-    protected static int count=0;
+    protected static int count = 0;
     protected static int rank1 = 1;
 
 }
