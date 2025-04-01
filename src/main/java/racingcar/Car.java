@@ -19,8 +19,15 @@ public class Car extends Application{
                 super.score.set(CountRound, super.score.get(CountRound) + 1);
             }
             CountRound = CountRound + 1;
+
+            String line;
+            for (int k = 0; super.score.size() > k; k++) {
+                line = "-".repeat(super.score.get(k));
+                System.out.println(super.carNames.get(k) + " : " + line);
+            }
+            System.out.println("");
+
         }
     }
-
 
 }
